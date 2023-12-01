@@ -1,7 +1,9 @@
 use aoc_runner_derive::{aoc, aoc_generator};
 use regex::Regex;
 
-#[aoc_generator(day1, part1)]
+mod clean;
+
+// #[aoc_generator(day1, part1)]
 fn day1_gen(input: &str) -> Vec<usize> {
     input.lines().map(|l| {
         let num = l.chars().fold(String::new(), |acc, c| {
@@ -20,7 +22,7 @@ fn day1_gen(input: &str) -> Vec<usize> {
     }).collect()
 }
 
-#[aoc(day1, part1)]
+// #[aoc(day1, part1)]
 fn day1_res(input: &[usize]) -> String {
     // input.iter().for_each(|n| println!("{}", n));
     input.iter().sum::<usize>().to_string()
@@ -53,7 +55,7 @@ fn words_to_numbers(input: &str) -> usize {
     }
 }
 
-#[aoc_generator(day1, part2)]
+// #[aoc_generator(day1, part2)]
 fn day1_gen2(input: &str) -> Vec<usize> {
     let regex = Regex::new("(eightwo|threeight|oneight|fiveight|nineight|eighthree|sevenine|twone|one|two|three|four|five|six|seven|eight|nine)").unwrap();
     let mut modified = String::from(input);
@@ -70,7 +72,7 @@ fn day1_gen2(input: &str) -> Vec<usize> {
     //     num.to_string()
     // });
 
-    modified.lines().for_each(|l| println!("{}", l));
+    // modified.lines().for_each(|l| println!("{}", l));
     modified.lines().map(|l| {
         let num = l.chars().fold(String::new(), |acc, c| {
             if c.is_numeric() {
@@ -88,7 +90,7 @@ fn day1_gen2(input: &str) -> Vec<usize> {
     }).collect()
 }
 
-#[aoc(day1, part2)]
+// #[aoc(day1, part2)]
 fn day1_res2(input: &[usize]) -> String {
     // input.iter().for_each(|n| println!("{}", n));
     input.iter().sum::<usize>().to_string()
