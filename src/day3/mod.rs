@@ -129,7 +129,7 @@ fn day3_run2(input: &(Vec<Number>, Vec<Operator>)) -> isize {
 
         return Vec::<isize>::from([nums[0] * nums[1]]);
     }).collect::<Vec<isize>>();
-
+ewgfwng
     println!("totals: {:?}", filtered);
 
     filtered.iter().sum()
