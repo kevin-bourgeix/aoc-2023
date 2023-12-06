@@ -50,10 +50,10 @@ fn day5_gen(input: &str) -> Vec<Range<isize>> {
 
 #[aoc(day5, part1)]
 fn day5_run(input: &[Range<isize>]) -> isize {
-    println!("{:?}", input);
     input.iter().map(|r| r.start).min().unwrap()
 }
 
+// This is way too complicated, but it works in a reasonable time
 #[aoc_generator(day5, part2)]
 fn day5_gen2(input: &str) -> Vec<Range<isize>> {
     let mut seeds = Vec::<Range<isize>>::new();
@@ -125,10 +125,6 @@ fn day5_gen2(input: &str) -> Vec<Range<isize>> {
 
             seeds.push(seeds_to_compute[i].clone());
         }
-        println!("range: {:?}" , src_range);
-        println!("seeds : {:?}", seeds);
-        println!("seeds to compute: {:?}", seeds_to_compute);
-        println!("seeds next: {:?}", seeds_next);
     });
     seeds_next
 }
